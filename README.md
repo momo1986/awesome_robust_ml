@@ -50,6 +50,8 @@ It follows the idea of https://github.com/P2333/Papers-of-Robust-ML
 
 <a id='General_training'></a>
 ## General Defenses (training phase)
+* [Distillation as a Defense to Adversarial Perturbations against Deep Neural Networks](https://arxiv.org/pdf/1511.04508.pdf)(SP 2016) <br/> This paper proposes a defense method based on knowledge distillation which is controversial on the adaptive attack.
+
 * [Stable Neural ODE with Lyapunov-Stable Equilibrium Points for Defending Against Adversarial Attacks](https://openreview.net/pdf?id=9CPc4EIr2t1) (NeurIPS 2021) <br/> This paper combines the stable conditions in control theory into neural ODE to induce locally stable models. 
 
 * [Adversarial Training with Rectified Rejection](https://arxiv.org/pdf/2105.14785.pdf) <br/> This paper proposes a coupling rejection strategy, where two simple but well-designed rejection metrics can be coupled to provabably distinguish any misclassified sample from correclty classified ones.
@@ -133,6 +135,10 @@ This paper shows adversarial robustness can transfer and that adversarial pretra
 
 <a id='Detection'></a>
 ## Adversarial Detection
+* [Characterizing Adversarial Subspaces Using Local Intrinsic Dimensionality]( https://arxiv.org/abs/1801.02613)(ICLR 2018) <br/> This paper demonstrates that the Local Intrinsic Dimensionalty can help detect the adversarial examples.
+
+* [SaftyNet: Detecting and Rejecting Adversarial Examples Robustly](https://openaccess.thecvf.com/content_ICCV_2017/papers/Lu_SafetyNet_Detecting_and_ICCV_2017_paper.pdf)(ICCV 2017) <br/> Based on the hypothesis that adversarial attacks work by producing different patterns of activation in late stage ReLUs to those produced by natural examples, this paper quantizes each ReLU at some set of thresholds to generate a discrete code (binarized code in the case of one threshold). This paper also proposes the SceneProof application it is possible to check whether a pair of image and depth map is consistent or not.
+
 * [Class-Disentanglement and Applications in Adversarial Detection and Defense](https://openreview.net/pdf?id=jFMzBeLyTc0) (NeurIPS 2021) <br/> This paper proposes to disentangle the class-dependence and visually reconstruction, and exploit the result as an adversarial detection metric.
 
 * [Adversarial Training with Rectified Rejection](https://arxiv.org/pdf/2105.14785.pdf) <br/> This paper proposes a coupling rejection strategy, where two simple but well-designed rejection metrics can be coupled to provabably distinguish any misclassified sample from correclty classified ones.
@@ -261,7 +267,7 @@ data and (poorly) trained models, namely, learned representations.
 ## Seminal Work
 * [Unsolved Problems in ML Safety](https://arxiv.org/pdf/2109.13916.pdf) <br/> A comprehensive roadmap for future researches in Trustworthy ML. 
 
-* [Towards Deep Learning Models Resistant to Adversarial Attacks](https://arxiv.org/pdf/1706.06083.pdf) (ICLR 2018) <br/> This paper proposed projected gradient descent (PGD) attack, and the PGD-based adversarial training.
+* [Towards Deep Learning Models Resistant to Adversarial Attacks](https://arxiv.org/pdf/1706.06083.pdf) (ICLR 2018) <br/> This paper proposed projected gradient descent (PGD) attack, and provide a theoretical and empirical proof that adversarial training based on min-max optimization with PGD attack can boost robustness.
 
 * [Adversarial examples are not easily detected: Bypassing ten detection methods](https://dl.acm.org/citation.cfm?Id=3140444) (AISec 17) <br/> This paper first desgined different adaptive attacks for detection-based methods.
 
