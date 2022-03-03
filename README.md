@@ -16,6 +16,8 @@ It follows the idea of https://github.com/P2333/Papers-of-Robust-ML
 - <a href="#Certified Defense and Model Verification">Certified Defense and Model Verification</a><br>
 - <a href="#Theoretical">Theoretical Analysis</a><br>
 - <a href="#Empirical">Empirical Analysis</a><br>
+- <a href="#Reinforcement_Learning">Reinforcement Learning</a><br>
+- <a href="#Poison_Attack">Poison Attack</a><br>
 - <a href="#Beyond_Safety">Beyond Safety (Adversarial for Good)</a><br>
 - <a href="#Seminal_work">Seminal Work</a><br>
 - <a href="#Benchmark_Datasets">Benchmark Datasets</a><br>
@@ -50,6 +52,12 @@ It follows the idea of https://github.com/P2333/Papers-of-Robust-ML
 
 <a id='General_training'></a>
 ## General Defenses (training phase)
+* [](https://openreview.net/pdf?id=SkgVRiC9Km)(arxiv 2018) <br/> This paper suggests a method for defending against adversarial examples and out-of-distribution samples via projection onto the data manifold. The paper suggests a new method for detecting when hidden layers are off of the manifold, and uses auto encoders to map them back onto the manifold. 
+
+* [Research on the relationship between prediction uncertainty and adversarial robustness (Chinese)](http://www.jos.org.cn/jos/article/abstract/6163)(Journal of Software 2022) <br/> This paper demonstrates the relationship between uncertainty and robustness. A counter-intuitive conclusion is delivered that the adversarial robustness is positive-correlated with uncertainty. If the information entropy of the model output is maximized while training the model, the classification surface of the model can be more balanced to enhance the adversarial robustness.
+
+* [PeerNets: Exploiting Peer Wisdom Against Adversarial Attacks](https://arxiv.org/abs/1806.00088)(ICLR 2019) <br/> This paper introduces Peer-Regularized networks (PeerNet) to perform non-local forward propagation. The novelty lies in alternating classical Euclidean convolutions with graph convolutions to harness information from a graph of peer samples.
+
 * [Distillation as a Defense to Adversarial Perturbations against Deep Neural Networks](https://arxiv.org/pdf/1511.04508.pdf)(SP 2016) <br/> This paper proposes a defense method based on knowledge distillation which is controversial on the adaptive attack.
 
 * [Stable Neural ODE with Lyapunov-Stable Equilibrium Points for Defending Against Adversarial Attacks](https://openreview.net/pdf?id=9CPc4EIr2t1) (NeurIPS 2021) <br/> This paper combines the stable conditions in control theory into neural ODE to induce locally stable models. 
@@ -137,6 +145,8 @@ This paper shows adversarial robustness can transfer and that adversarial pretra
 ## Adversarial Detection
 * [Characterizing Adversarial Subspaces Using Local Intrinsic Dimensionality]( https://arxiv.org/abs/1801.02613)(ICLR 2018) <br/> This paper demonstrates that the Local Intrinsic Dimensionalty can help detect the adversarial examples.
 
+* [Characterizing Adversarial Examples Based on Spatial Consistency Information for Semantic Segmentation]()(ECCV 2018) <br/> In the task of semantic segmentation, this paper applies spatial consistency information analysis to recognize adversarial examples in segmentation.
+
 * [SaftyNet: Detecting and Rejecting Adversarial Examples Robustly](https://openaccess.thecvf.com/content_ICCV_2017/papers/Lu_SafetyNet_Detecting_and_ICCV_2017_paper.pdf)(ICCV 2017) <br/> Based on the hypothesis that adversarial attacks work by producing different patterns of activation in late stage ReLUs to those produced by natural examples, this paper quantizes each ReLU at some set of thresholds to generate a discrete code (binarized code in the case of one threshold). This paper also proposes the SceneProof application it is possible to check whether a pair of image and depth map is consistent or not.
 
 * [Class-Disentanglement and Applications in Adversarial Detection and Defense](https://openreview.net/pdf?id=jFMzBeLyTc0) (NeurIPS 2021) <br/> This paper proposes to disentangle the class-dependence and visually reconstruction, and exploit the result as an adversarial detection metric.
@@ -153,6 +163,8 @@ This paper shows adversarial robustness can transfer and that adversarial pretra
 
 <a id='Certified Defense and Model Verification'></a>
 ## Certified Defense and Model Verification
+* [Certiﬁed Adversarial Robustness via Randomized Smoothing](https://arxiv.org/abs/1902.02918)(ICML 2019) <br/> This paper utilizes randomized smoothing to train state-of-the-art certiﬁably L2-robust ImageNet classiﬁers.
+
 * [Towards Better Understanding of Training Certifiably Robust Models against Adversarial Examples](https://openreview.net/pdf?id=b18Az57ioHn) (NeurIPS 2021) <br/>  This paper generally study the effciency of different certified defenses, and find that the smoothness of loss landscape matters.
 
 * [Towards Verifying Robustness of Neural Networks against Semantic Perturbations](https://arxiv.org/abs/1912.09533) (CVPR 2020) <br/> This paper generalize the pixel-wise verification methods into the semantic transformation space.
@@ -175,13 +187,13 @@ This paper shows adversarial robustness can transfer and that adversarial pretra
 
 * [Scaling Provable Adversarial Defenses](http://papers.nips.cc/paper/8060-scaling-provable-adversarial-defenses.pdf) (NeurIPS 2018) <br/> They add three tricks to improve the scalability (to CIFAR-10) of previously proposed method in ICML.
 
-* [Provable Defenses against Adversarial Examples via the Convex Outer Adversarial Polytope](https://arxiv.org/pdf/1711.00851.pdf) (ICML 2018) <br/> By robust optimization (via a linear program), they can get a point-wise bound of robustness, where no adversarial example exists in the bound. Experiments are done on MNIST.
+* [Provable Defenses against Adversarial Examples via the Convex Outer Adversarial Polytope](https://arxiv.org/pdf/1711.00851.pdf) (ICML 2018) <br/> By robust optimization (via a linear program of convex outer approximation), they can get a point-wise bound of robustness, where no adversarial example exists in the bound. Experiments are done on MNIST, Fashion-MNIST, HAR, and SVHN.
 
 * [Towards Fast Computation of Certified Robustness for ReLU Networks](https://arxiv.org/abs/1804.09699) (ICML 2018) <br/> This paper proposes the Fast-Lin and Fast-Lip methods.
 
 * [Evaluating the Robustness of Neural Networks: An Extreme Value Theory Approach](https://arxiv.org/abs/1801.10578) (ICLR 2018) <br/> This paper proposes the CLEVER method to estimate the upper bound of specification.
 
-* [Certified Defenses against Adversarial Examples](https://arxiv.org/abs/1801.09344) (ICLR 2018) <br/> This paper proposes the certified training with semidefinite relaxation.
+* [Certified Defenses against Adversarial Examples](https://arxiv.org/abs/1801.09344) (ICLR 2018) <br/> This paper proposes the certified training with semidefinite relaxation to realize the boosting of robustness on the adaptive regularization.
 
 * [A Dual Approach to Scalable Verification of Deep Networks](https://arxiv.org/abs/1803.06567) (UAI 2018) <br/> This paper solves the dual problem to provide an upper bound of the primary specification problem for verification.
 
@@ -191,6 +203,10 @@ This paper shows adversarial robustness can transfer and that adversarial pretra
 
 <a id='Theoretical'></a>
 ## Theoretical Analysis
+* [Parseval Networks: Improving Robustness to Adversarial Examples](http://proceedings.mlr.press/v70/cisse17a/cisse17a.pdf)(ICML 2017) <br/> This paper proposes a method to boost the robustness with L2 regularization and deliver a layer-wise theoretical analysis.
+
+* [Lower bounds on the robustness to adversarial perturbations](https://papers.nips.cc/paper/2017/file/298f95e1bf9136124592c8d4825a06fc-Paper.pdf)(NeurIPS 2017) <br/> This paper demonstrates a methodd to limit the possible layer-wise norm expansions in a variety of different layer types. It is a seminal work on the robustness analysis of convolutional neural network. 
+
 * [Towards Deep Learning Models Resistant to Large Perturbations](https://arxiv.org/pdf/2003.13370.pdf) <br/> This paper prove that the weight initialization of a already robust model on small perturbation can be helpful for training on large perturbations.
 
 * [Improved Sample Complexities for Deep Neural Networks and Robust Classification via an All-Layer Margin](https://openreview.net/forum?id=HJe_yR4Fwr) (ICLR 2020) <br/> This paper connect the generalization gap w.r.t all-layer margin, and propose a variant of adversarial training, where the perturbations can be imposed on each layer in network.
@@ -245,6 +261,34 @@ data and (poorly) trained models, namely, learned representations.
 * [Is Robustness the Cost of Accuracy? -- A Comprehensive Study on the Robustness of 18 Deep Image Classification Models](https://openaccess.thecvf.com/content_ECCV_2018/html/Dong_Su_Is_Robustness_the_ECCV_2018_paper.html) <br/> This paper empirically studies the effects of model architectures (trained on ImageNet) on robustness and accuracy.
 
 * [Adversarial Example Defenses: Ensembles of Weak Defenses are not Strong](https://arxiv.org/pdf/1706.04701.pdf) <br/> This paper tests some ensemble of existing detection-based defenses, and claim that these ensemble defenses could still be evaded by white-box attacks.
+
+<a id='Reinforcement_Learning'></a>
+## Reinforcement Learning
+* [Certifiable Robustness to Adversarial State Uncertainty in Deep Reinforcement Learning](https://ieeexplore.ieee.org/document/9354500)(TNNLLS 2021) <br/> This paper leverages research on certified adversarial robustness to develop an online certifiably robust for deep reinforcement learning algorithms. The proposed defense computes guaranteed lower bounds on state-action values during execution to identify and choose a robust action under a worst case deviation in input space due to possible adversaries or noise.
+
+<a id='Poiso_Attack'></a>
+## Poison Attack
+* [Poisoning Attacks against Support Vector Machines](https://arxiv.org/abs/1206.6389)(ICML 2012) <br/> This paper investigates a family of poisoning attacks against Support Vector Machines (SVM).
+
+* [Data Poisoning Attacks on Factorization-Based Collaborative Filtering](https://arxiv.org/pdf/1608.08182.pdf)(NeurIPS 2016) <br/> This paper demonstrates how a powerful attacker with full knowledge of the learner can generate malicious data so as to maximize his/her malicious objectives, while at the same time mimicking normal user behavior to avoid being detected. It presents efficient solutions for two popular factorization- based collaborative filtering algorithms: the alternative minimization formulation and the nuclear norm minimization method.
+
+* [Using Machine Teaching to Identify Optimal Training-Set Attacks on Machine Learners](https://pages.cs.wisc.edu/~jerryzhu/pub/Mei2015Machine.pdf)(AAAI 2015) <br/> This paper utilizes the certain Karush-Kuhn-Tucker conditions to identify optimal training-set attacks on machine learners.
+
+* [Universal Multi-Party Poisoning Attacks](http://proceedings.mlr.press/v97/mahloujifar19a/mahloujifar19a.pdf)(ICML 2019) <br/> In this work, the universal multi-party poison attacks is adapted.
+
+* [Trojaning Attack on Neural Networks](https://weihang-wang.github.io/papers/tnn_ndss18.pdf)(NDSS 2018) <br/> In this paper, the trojan attack is proposed.
+
+* [Neural Cleanse: Identifying and Mitigating Backdoor Attacks in Neural Networks](http://people.cs.uchicago.edu/~ravenben/publications/pdf/backdoor-sp19.pdf)(SP 2019) <br/> This paper proposes a novel and generalizable technique for detecting and reverse engineering hidden triggers embedded inside deep neural networks.
+
+* [Data Poisoning Attack against Knowledge Graph Embedding](https://www.ijcai.org/proceedings/2019/0674.pdf)(IJCAI 2019) <br/> In this paper, a data poison attack against knowledge graph embeddding is proposed.
+
+* [Manipulating Machine Learning: Poisoning Attacks and Countermeasures for Regression Learning](https://arxiv.org/pdf/1804.00308.pdf)(SP 2018) <br/> This paper proposes a theoretically-grounded optimization framework for the poison attack of regression task, and discuss its potential handle methods.
+
+* [Certified Defenses for Data Poisoning Attacks](https://arxiv.org/pdf/1706.03691)(NeurIPS 2018) <br/> This paper address the certified robustness under the poison attack by constructing approximate upper bounds on the loss across a broad family of attacks, for defenders that first perform outlier removal followed by empirical risk minimization.
+
+* [Robust Logistic Regression and Classification](https://proceedings.neurips.cc/paper/2014/file/6cdd60ea0045eb7a6ec44c54d29ed402-Paper.pdf)(NeurIPS 2014) <br/> It is a seminal work of logistic regression and logistic classification that can defend the constant fraction of adversarial outliers.
+
+* [Robust High-Dimensional Linear Regression](Robust High-Dimensional Linear Regression)(https://arxiv.org/pdf/1608.02257.pdf)(arxiv 2016) <br/> This paper discusses the poison attack of linear regression.
 
 <a id='Beyond_Safety'></a>
 ## Beyond Safety
