@@ -18,6 +18,7 @@ It follows the idea of https://github.com/P2333/Papers-of-Robust-ML
 - <a href="#Empirical">Empirical Analysis</a><br>
 - <a href="#Reinforcement_Learning">Reinforcement Learning</a><br>
 - <a href="#Poison_Attack">Poison Attack</a><br>
+- <a href="#Federate_Learning">Federate_Learning</a><br>
 - <a href="#Beyond_Safety">Beyond Safety (Adversarial for Good)</a><br>
 - <a href="#Seminal_work">Seminal Work</a><br>
 - <a href="#Benchmark_Datasets">Benchmark Datasets</a><br>
@@ -203,6 +204,10 @@ This paper shows adversarial robustness can transfer and that adversarial pretra
 
 <a id='Theoretical'></a>
 ## Theoretical Analysis
+* [Unlabeled Data Improves Adversarial Robustness](https://arxiv.org/abs/1905.13736)(NeurIPS 2019) <br/> This is a seminal theoretical work led by Percy to prove that semi-supervised learning is effective to promote the adversarial robustness. 
+
+* [Are Labels Required for Improving Adversarial Robustness?]()(NeurIPS 2019)
+
 * [Parseval Networks: Improving Robustness to Adversarial Examples](http://proceedings.mlr.press/v70/cisse17a/cisse17a.pdf)(ICML 2017) <br/> This paper proposes a method to boost the robustness with L2 regularization and deliver a layer-wise theoretical analysis.
 
 * [Lower bounds on the robustness to adversarial perturbations](https://papers.nips.cc/paper/2017/file/298f95e1bf9136124592c8d4825a06fc-Paper.pdf)(NeurIPS 2017) <br/> This paper demonstrates a methodd to limit the possible layer-wise norm expansions in a variety of different layer types. It is a seminal work on the robustness analysis of convolutional neural network. 
@@ -223,7 +228,9 @@ This paper shows adversarial robustness can transfer and that adversarial pretra
 
 * [Adversarial Vulnerability for Any Classifier](http://papers.nips.cc/paper/7394-adversarial-vulnerability-for-any-classifier.pdf) (NeurIPS 2018) <br/> Uniform upper bound of robustness for any classifier on the data sampled from smooth genertive models.
 
-* [Adversarially Robust Generalization Requires More Data](http://papers.nips.cc/paper/7749-adversarially-robust-generalization-requires-more-data.pdf) (NeurIPS 2018) <br/> This paper show that robust generalization requires much more sample complexity compared to standard generlization on two simple data distributional models. 
+* [Adversarially Robust Generalization Requires More Data](http://papers.nips.cc/paper/7749-adversarially-robust-generalization-requires-more-data.pdf) (NeurIPS 2018) <br/> The setting of this paper is choosen to model the empirical observation that adversarial generalization may require more data than natural generalization. 
+
+* [Are Labels Required for Improving Adversarial Robustness?](https://arxiv.org/pdf/1905.13725.pdf)(NeurIPS 2019) <br> This is the argumentative work of the work "Adversarially Robust Generalization Requires More Data" to save the economical cost of semi-supervised learning for the robustness improvement.
 
 * [Robustness of Classifiers:from Adversarial to Random Noise](http://papers.nips.cc/paper/6331-robustness-of-classifiers-from-adversarial-to-random-noise.pdf) (NeurIPS 2016)
 
@@ -266,7 +273,11 @@ data and (poorly) trained models, namely, learned representations.
 ## Reinforcement Learning
 * [Certifiable Robustness to Adversarial State Uncertainty in Deep Reinforcement Learning](https://ieeexplore.ieee.org/document/9354500)(TNNLLS 2021) <br/> This paper leverages research on certified adversarial robustness to develop an online certifiably robust for deep reinforcement learning algorithms. The proposed defense computes guaranteed lower bounds on state-action values during execution to identify and choose a robust action under a worst case deviation in input space due to possible adversaries or noise.
 
-<a id='Poiso_Attack'></a>
+* [Adversarially Robust Policy Learning: Active Construction of Physically-Plausible Perturbations](http://vision.stanford.edu/pdf/mandlekar2017iros.pdf)(IROS 2017) <br/> This paper introduces Adversarially Robust Policy Learning (ARPL), an algorithm that leverages active computation of physically-plausible adversarial examples during training to enable robust policy learning in the source domain and robust performance under both random and adversarial input perturbations.
+
+* [Robust Adversarial Reinforcement Learning](https://arxiv.org/pdf/1703.02702.pdf)(ICML 2017) <br/> This paper advocates a two-pronged approach with adversarial agents for modeling disturbances and adversaries with the incorporation of the domain knowledge to deliver the policy robust to uncertainties and model initializations.
+
+<a id='Poison_Attack'></a>
 ## Poison Attack
 * [Poisoning Attacks against Support Vector Machines](https://arxiv.org/abs/1206.6389)(ICML 2012) <br/> This paper investigates a family of poisoning attacks against Support Vector Machines (SVM).
 
@@ -288,7 +299,14 @@ data and (poorly) trained models, namely, learned representations.
 
 * [Robust Logistic Regression and Classification](https://proceedings.neurips.cc/paper/2014/file/6cdd60ea0045eb7a6ec44c54d29ed402-Paper.pdf)(NeurIPS 2014) <br/> It is a seminal work of logistic regression and logistic classification that can defend the constant fraction of adversarial outliers.
 
-* [Robust High-Dimensional Linear Regression](Robust High-Dimensional Linear Regression)(https://arxiv.org/pdf/1608.02257.pdf)(arxiv 2016) <br/> This paper discusses the poison attack of linear regression.
+* [Robust High-Dimensional Linear Regression](https://arxiv.org/pdf/1608.02257.pdf)(arxiv 2016) <br/> This paper discusses the poison attack of linear regression.
+
+<a id='Federate_Learning'></a>
+##Federate Learning
+* [CRFL: Certifiably Robust Federated Learning against Backdoor Attacks](https://arxiv.org/pdf/2106.08283.pdf)(ICML 2021) <br/> This paper proposes Certifiably Robust Federated Learning (CRFL), to train certifiably robust FL models against backdoors.
+
+* [DBA: DISTRIBUTED BACKDOOR ATTACKS AGAINST FEDERATED LEARNING](https://openreview.net/pdf?id=rkgyS0VFvr)(ICLR 2020) <br/> This paper proposes the distributed backdoor attack (DBA) which decomposes a global trigger pattern into separate local patterns and embed them into the training set of different adversarial parties respectively.
+
 
 <a id='Beyond_Safety'></a>
 ## Beyond Safety
